@@ -157,3 +157,4 @@ p{line-height:1.6}
 @media(max-width:900px){.navin{flex-wrap:wrap;gap:6px 14px;padding:10px 0 4px}.navacts{width:100%;overflow-x:auto;scrollbar-width:none;gap:18px;padding-bottom:6px}.navacts .navbtn{display:inline-block;white-space:nowrap;font-size:13px}.navacts .login{margin-left:auto;min-height:36px;padding:0 14px;font-size:13px}}
 /* Menú estático: queda arriba y no acompaña al bajar */
 .nav{position:relative;top:auto}
+.backed__facts.panel{display:grid;gap:14px}

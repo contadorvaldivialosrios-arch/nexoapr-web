@@ -105,7 +105,7 @@ WEBSITE = {"@type": "WebSite", "@id": BASE + "/#website", "url": BASE + "/",
 
 TEMPLATE = read(os.path.join(ROOT, "templates", "base.html"))
 CHROME = ""
-NAV_KEYS = ["modulos", "migracion", "seguridad", "blog", "demo"]
+NAV_KEYS = ["modulos", "migracion", "seguridad", "blog", "contador", "demo"]
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
          "septiembre", "octubre", "noviembre", "diciembre"]
 
