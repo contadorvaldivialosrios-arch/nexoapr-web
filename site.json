@@ -1,0 +1,16 @@
+{
+  "base_url": "https://www.nexoapr.cl",
+  "name": "NexoAPR",
+  "legal_name": "Aguilar y Aguilar Consultores de APR Ltda.",
+  "author": "Equipo NexoAPR",
+  "description": "NexoAPR es el ERP web para comités APR y SSR de Chile: lecturas, facturación, cobranza, caja, banco, contabilidad e informe DOH en una sola plataforma.",
+  "phone": "+56940144218",
+  "email": "contacto@nexoapr.cl",
+  "city": "La Unión",
+  "region": "Los Ríos",
+  "og_image": "/assets/img/og-nexoapr.jpg",
+  "app_url": "https://nexoapr-app.pages.dev/",
+  "same_as": [
+    "https://www.facebook.com/nexoapr"
+  ]
+}

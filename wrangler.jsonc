@@ -1,0 +1,26 @@
+{
+  // Sitio nexoapr.cl: Worker con archivos estáticos (dist/) y formulario de demostración.
+  "name": "nexoapr-web",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "nexoapr-demos",
+      "database_id": "49d03d85-c5b0-458f-b3e8-2d7960706a04",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "send_email": [
+    { "name": "AVISO", "destination_address": "contadorvaldivialosrios@gmail.com" }
+  ],
+  "vars": { "AVISO_DESDE": "formulario@nexoapr.cl" },
+  "workers_dev": true
+}

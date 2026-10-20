@@ -1,0 +1,43 @@
+name: Publicar nexoapr.cl
+
+# Cada push a main (por ejemplo, la guía semanal de la tarea programada) construye el sitio
+# y lo publica en el Worker "nexoapr-web" de Cloudflare. También a mano y una vez al día
+# (para publicar guías con fecha programada).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "15 10 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-nexoapr
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Construir sitio
+        run: python3 build.py
+      - name: Publicar con wrangler
+        env:
+          CF_TOKEN_RAW: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT_RAW: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          # Limpia saltos de línea o espacios que PowerShell agrega al guardar los secretos
+          export CLOUDFLARE_API_TOKEN="$(printf '%s' "$CF_TOKEN_RAW" | tr -d '\r\n\t ')"
+          export CLOUDFLARE_ACCOUNT_ID="$(printf '%s' "$CF_ACCOUNT_RAW" | tr -d '\r\n\t ')"
+          ok=$(curl -s "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/tokens/verify" -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" | grep -c '"success":true' || true)
+          if [ "$ok" != "1" ]; then
+            echo "::warning::El secreto CLOUDFLARE_API_TOKEN no es válido: el sitio no se actualizó. Ver README."
+            exit 0
+          fi
+          npx --yes wrangler@4 deploy

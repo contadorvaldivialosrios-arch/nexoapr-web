@@ -1,0 +1,5 @@
+/p/root-nexo-blue1565c0-nexo-blue.html  /  301
+/feeds/*  /rss.xml  301
+/search  /blog/  301
+/search/*  /blog/  301
+/atom.xml  /rss.xml  301

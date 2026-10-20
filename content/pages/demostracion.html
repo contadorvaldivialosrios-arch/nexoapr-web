@@ -1,0 +1,123 @@
+<!--
+path: /p/demostracion.html
+title: Solicitar demostración de NexoAPR | ERP para APR y SSR
+description: Pida una demostración en línea de NexoAPR para su comité APR o SSR. Le mostramos lecturas, facturación, caja, contabilidad e informe DOH.
+nav: demo
+-->
+<header class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Inicio</a> / Demostración</p>
+    <h1>Vea NexoAPR funcionando</h1>
+    <p class="lead">Cuéntenos de su comité y coordinamos una demostración en línea, sin compromiso. Revisamos también cómo sería el traspaso de su información.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="contact" style="width:100%;margin:0">
+    <div class="contactintro">
+      <h2>Solicitar demostración</h2>
+      <p style="margin-bottom:22px">Le respondemos por WhatsApp o teléfono para acordar el día y la hora.</p>
+      <form class="form" id="demo" novalidate>
+        <div class="form__grid">
+          <div class="field">
+            <label for="f-nombre">Su nombre</label>
+            <input id="f-nombre" name="nombre" autocomplete="name" required>
+            <p class="field__error" hidden>Escriba su nombre.</p>
+          </div>
+          <div class="field">
+            <label for="f-cargo">Cargo <span class="field__opt">(opcional)</span></label>
+            <select id="f-cargo" name="cargo">
+              <option value="">Seleccione</option>
+              <option>Presidente/a</option><option>Tesorero/a</option><option>Secretario/a</option>
+              <option>Administrativo/a</option><option>Contador/a</option><option>Otro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-telefono">Teléfono o WhatsApp</label>
+            <input id="f-telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="+56 9 1234 5678" required>
+            <p class="field__error" hidden>Escriba un teléfono de al menos 8 dígitos.</p>
+          </div>
+          <div class="field">
+            <label for="f-correo">Correo <span class="field__opt">(opcional)</span></label>
+            <input id="f-correo" name="correo" type="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-comite">Nombre del APR o SSR</label>
+            <input id="f-comite" name="comite" required>
+            <p class="field__error" hidden>Escriba el nombre del comité.</p>
+          </div>
+          <div class="field">
+            <label for="f-comuna">Comuna <span class="field__opt">(opcional)</span></label>
+            <input id="f-comuna" name="comuna" autocomplete="address-level2">
+          </div>
+          <div class="field">
+            <label for="f-socios">N° aproximado de socios <span class="field__opt">(opcional)</span></label>
+            <input id="f-socios" name="socios" type="number" min="0" max="20000" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="f-sistema">¿Cómo llevan hoy la gestión?</label>
+            <select id="f-sistema" name="sistema_actual">
+              <option>Planillas Excel</option><option>Otro sistema</option><option>Cuadernos o papel</option><option>Una mezcla</option><option>No estoy seguro</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="f-mensaje">¿Qué le gustaría resolver? <span class="field__opt">(opcional)</span></label>
+            <textarea id="f-mensaje" name="mensaje" rows="4" placeholder="Por ejemplo: la facturación nos toma muchos días y no sabemos bien la morosidad."></textarea>
+          </div>
+          <div class="field field--hp" aria-hidden="true"><label for="f-web">No completar</label><input id="f-web" name="web" tabindex="-1" autocomplete="off"></div>
+        </div>
+        <button class="primary" type="submit">Solicitar demostración</button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+        <p class="small muted">Usamos estos datos solo para coordinar la demostración (<a href="/p/privacidad.html" style="color:#2763e6">privacidad</a>).</p>
+      </form>
+      <div class="form-done" id="demo-ok" hidden tabindex="-1">
+        <h3>Recibimos su solicitud</h3>
+        <p>Le escribiremos para coordinar la demostración. Si quiere adelantar, escríbanos por WhatsApp.</p>
+        <a class="primary" href="https://wa.me/56940144218?text=Hola%2C%20acabo%20de%20solicitar%20una%20demostraci%C3%B3n%20de%20NexoAPR.">Escribir por WhatsApp</a>
+      </div>
+    </div>
+    <div class="contactcard">
+      <div class="contactlinks">
+        <a class="contactlink whatsapp" href="https://wa.me/56940144218?text=Hola%2C%20quiero%20conocer%20NexoAPR." rel="noopener"><span>☎</span><div><small>WhatsApp</small>+56 9 4014 4218</div></a>
+        <a class="contactlink" href="mailto:contacto@nexoapr.cl"><span>✉</span><div><small>Correo</small>contacto@nexoapr.cl</div></a>
+        <a class="socialbox" href="https://www.facebook.com/nexoapr" rel="noopener"><div class="socialicon fb">f</div><div><strong>Facebook NexoAPR</strong><span>Novedades y demostraciones</span><span class="socialurl">facebook.com/nexoapr</span></div></a>
+      </div>
+      <div class="securitybox" style="margin-top:16px">
+        <strong>En la demostración vemos</strong>
+        <div class="securitylist">
+          <div class="securityitem"><span class="check">✓</span><span>El recorrido de la lectura a la boleta.</span></div>
+          <div class="securityitem"><span class="check">✓</span><span>Caja, banco y cobranza del mes.</span></div>
+          <div class="securityitem"><span class="check">✓</span><span>Contabilidad e informe DOH.</span></div>
+          <div class="securityitem"><span class="check">✓</span><span>Cómo traspasar sus datos actuales.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var form=document.getElementById('demo'); if(!form) return;
+  var ok=document.getElementById('demo-ok'), status=form.querySelector('.form__status'), btn=form.querySelector('button[type=submit]');
+  function v(n){return (form.elements[n].value||'').trim()}
+  function check(el,valid){var f=el.closest('.field'),e=f.querySelector('.field__error');f.classList.toggle('field--bad',!valid);if(e)e.hidden=valid;el.setAttribute('aria-invalid',valid?'false':'true');return valid}
+  function validate(){
+    var a=check(form.elements.nombre,v('nombre').length>1);
+    var b=check(form.elements.telefono,v('telefono').replace(/\D/g,'').length>=8);
+    var c=check(form.elements.comite,v('comite').length>1);
+    return a&&b&&c;
+  }
+  function fail(msg){btn.disabled=false;btn.textContent='Solicitar demostración';status.innerHTML=msg+' También puede escribirnos por <a href="https://wa.me/56940144218">WhatsApp</a>.'}
+  form.addEventListener('input',function(e){var f=e.target.closest('.field');if(f&&f.classList.contains('field--bad'))validate()});
+  form.addEventListener('submit',function(e){
+    e.preventDefault(); status.textContent='';
+    if(!validate()){var bad=form.querySelector('.field--bad input');if(bad)bad.focus();return}
+    btn.disabled=true; btn.textContent='Enviando…';
+    var data={}; ['nombre','cargo','telefono','correo','comite','comuna','socios','sistema_actual','mensaje','web'].forEach(function(k){data[k]=v(k)});
+    fetch('/api/demo',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.json().then(function(d){return {r:r,d:d}})})
+      .then(function(x){ if(x.r.ok&&x.d.ok){form.hidden=true;ok.hidden=false;ok.focus();} else fail(x.d.error||'No pudimos enviar la solicitud.'); })
+      .catch(function(){fail('No pudimos enviar la solicitud. Revise su conexión.')});
+  });
+})();
+</script>

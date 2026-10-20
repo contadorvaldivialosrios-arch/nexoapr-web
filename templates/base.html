@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{url}}">
+{{robots_meta}}
+<meta property="og:type" content="{{og_type}}">
+<meta property="og:site_name" content="NexoAPR">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{og_image}}">
+<meta name="theme-color" content="#0f2346">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="alternate" type="application/rss+xml" title="NexoAPR - Guías" href="{{base}}/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v={{build}}">
+<script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body class="page-{{body_class}}">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="nav">
+  <div class="navin">
+    <a class="brand" href="/" aria-label="NexoAPR, ir al inicio">
+      <span class="brandmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5c3.6 4.8 6 8.3 6 11.5a6 6 0 0 1-12 0c0-3.2 2.4-6.7 6-11.5z" fill="#fff"/></svg></span>
+      <span>NEXO <b>APR</b><small>GESTIÓN INTEGRAL APR / SSR</small></span>
+    </a>
+    <nav class="navacts" aria-label="Menú principal">
+      <a class="navbtn" href="/p/modulos.html"{{nav_modulos}}>Módulos</a>
+      <a class="navbtn" href="/p/migracion.html"{{nav_migracion}}>Migración</a>
+      <a class="navbtn" href="/p/seguridad.html"{{nav_seguridad}}>Seguridad</a>
+      <a class="navbtn" href="/blog/"{{nav_blog}}>Guías</a>
+      <a class="navbtn navbtn--cta" href="/p/demostracion.html"{{nav_demo}}>Pedir demo</a>
+      <a class="login" href="https://nexoapr-app.pages.dev/" rel="noopener">Ingresar</a>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+{{content}}
+</main>
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <p class="footer__brand">NEXO <b>APR</b></p>
+      <p>ERP web para comités de agua potable rural y servicios sanitarios rurales de Chile. De la lectura al informe DOH, todo conectado.</p>
+      <p class="footer__by">Desarrollado por el equipo de <a href="https://www.contadorapr.cl/">Contador APR</a>, más de 10 años en contabilidad de comités APR y SSR.</p>
+    </div>
+    <nav class="footer__col" aria-label="Producto">
+      <p class="footer__title">Producto</p>
+      <a href="/p/modulos.html">Módulos</a>
+      <a href="/p/migracion.html">Migración</a>
+      <a href="/p/seguridad.html">Seguridad</a>
+      <a href="https://nexoapr-app.pages.dev/" rel="noopener">Ingresar a la plataforma</a>
+    </nav>
+    <nav class="footer__col" aria-label="Recursos">
+      <p class="footer__title">Recursos</p>
+      <a href="/blog/">Guías de gestión APR</a>
+      <a href="https://www.contadorapr.cl/p/servicios.html">Servicios contables para comités</a>
+      <a href="/rss.xml">RSS</a>
+      <a href="/p/privacidad.html">Privacidad</a>
+    </nav>
+    <div class="footer__col">
+      <p class="footer__title">Contacto</p>
+      <a href="/p/demostracion.html">Solicitar demostración</a>
+      <a href="https://wa.me/56940144218">WhatsApp +56 9 4014 4218</a>
+      <a href="mailto:contacto@nexoapr.cl">contacto@nexoapr.cl</a>
+      <a href="https://www.facebook.com/nexoapr" rel="noopener">Facebook</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>&copy; {{year}} NexoAPR · Aguilar y Aguilar Consultores de APR Ltda. · La Unión, Los Ríos</span>
+  </div>
+</footer>
+<div class="floating-socials">
+  <a aria-label="WhatsApp NexoAPR" class="floating-social whatsapp" href="https://wa.me/56940144218?text=Hola%2C%20quiero%20conocer%20NexoAPR." rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2m5 14c-.2.7-1.4 1.3-2 1.4-2 .2-5.2-1-7.3-4.6-1.5-2.6-.2-4.4.7-4.5h.7l1 2.3c.1.3 0 .5-.2.8l-.7.8c-.2.2-.1.5 0 .7.7 1.3 1.7 2.3 3 3 .3.1.5.1.7-.1l1-1.2c.2-.2.4-.3.7-.2l2.3 1.1c.3.1.4.3.3.5"/></svg><span class="sr-only">WhatsApp</span></a>
+</div>
+</body>
+</html>
