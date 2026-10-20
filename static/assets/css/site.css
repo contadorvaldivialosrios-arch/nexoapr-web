@@ -155,3 +155,5 @@ p{line-height:1.6}
 @media(max-width:900px){.navacts .navbtn--cta{display:inline-block}.two,.backed{grid-template-columns:1fr}.page-head h1{font-size:38px}}
 @media(max-width:620px){.page-head .wrap,.article .wrap{width:min(100% - 24px,1280px)}.page-head .wrap{padding:44px 0 40px}.page-head h1{font-size:32px}.form__grid,.ticks,.post-list,.footer__grid{grid-template-columns:1fr}.module{grid-template-columns:1fr;gap:12px}.form button.primary{width:100%}.navacts{gap:14px}.navbtn--cta{font-size:13px}.backed{padding:24px}}
 @media(max-width:900px){.navin{flex-wrap:wrap;gap:6px 14px;padding:10px 0 4px}.navacts{width:100%;overflow-x:auto;scrollbar-width:none;gap:18px;padding-bottom:6px}.navacts .navbtn{display:inline-block;white-space:nowrap;font-size:13px}.navacts .login{margin-left:auto;min-height:36px;padding:0 14px;font-size:13px}}
+/* Menú estático: queda arriba y no acompaña al bajar */
+.nav{position:relative;top:auto}
