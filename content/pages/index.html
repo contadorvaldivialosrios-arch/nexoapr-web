@@ -1,147 +1,167 @@
 <!--
 path: /
 title: NexoAPR | ERP y sistema de gestión para APR y SSR en Chile
-description: NexoAPR es el ERP web para comités APR y SSR: lecturas, facturación, cobranza, caja, banco, contabilidad e informe DOH en una sola plataforma. Pida una demo.
+description: NexoAPR es el ERP web para comités APR y SSR: lecturas, facturación, cobranza, caja, banco, contabilidad e informe DOH en una sola plataforma. Consulte planes.
 nav: home
 -->
-<section class="hero">
-  <div class="heroin">
-    <div>
-      <div class="eyebrow">ERP especializado para APR y SSR de Chile</div>
-      <h1>El ERP creado para <span>APR y SSR</span> de Chile</h1>
-      <p class="copy">Lecturas, facturación, cobranza, caja, banco, contabilidad e informes DOH en una sola plataforma web. Desarrollado por contadores con más de 10 años en comités de agua.</p>
-      <div class="actions">
-        <a class="primary" href="/p/demostracion.html">Solicitar demostración</a>
-        <a class="secondary" href="/p/modulos.html">Ver módulos</a>
+<div class="intro" id="intro" hidden>
+  <video class="intro__video" id="intro-video" muted playsinline preload="auto" poster="/assets/video/intro-nexoapr.jpg" aria-label="Presentación de NexoAPR: una gota cae sobre el agua y aparece el sistema en un notebook">
+    <source src="/assets/video/intro-nexoapr.mp4" type="video/mp4">
+  </video>
+  <button class="intro__skip" id="intro-skip" type="button">Saltar intro</button>
+</div>
+<section class="one" aria-label="NexoAPR en una pantalla">
+  <div class="one__bg" aria-hidden="true">
+    <span class="one__drop one__drop--a"></span><span class="one__drop one__drop--b"></span><span class="one__drop one__drop--c"></span>
+    <svg class="one__wave one__wave--back" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 60 C240 10 480 110 720 60 S1200 10 1440 60 V120 H0Z"/></svg>
+    <svg class="one__wave one__wave--front" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 70 C240 120 480 20 720 70 S1200 120 1440 70 V120 H0Z"/></svg>
+  </div>
+
+  <div class="one__in">
+    <div class="one__hero">
+      <p class="eyebrow">ERP especializado para APR y SSR de Chile</p>
+      <h1>Su comité de agua, <span>en un solo sistema</span></h1>
+      <p class="one__rotor" aria-live="polite">
+        <span class="one__rotor-label">Hoy resolvemos:</span>
+        <span class="one__rotor-word" id="rotor">Lecturas y rutas</span>
+      </p>
+      <p class="one__copy">De la lectura al informe DOH, todo conectado. Desarrollado por contadores con más de 10 años en comités de agua.</p>
+      <div class="one__actions">
+        <button class="one__btn one__btn--primary" type="button" data-go="consulta">Consultar ahora</button>
+        <a class="one__btn one__btn--ghost" href="https://nexoapr-app.pages.dev/" rel="noopener">Ingresar a la plataforma</a>
       </div>
-      <div class="hero-badges">
-        <div class="hero-badge"><strong>Especializado</strong>Diseñado para APR / SSR</div>
-        <div class="hero-badge"><strong>100% web</strong>Sin instalaciones locales</div>
-        <div class="hero-badge"><strong>Integrado</strong>Operación y contabilidad</div>
-        <div class="hero-badge"><strong>Trazable</strong>Control por usuario y APR</div>
+      <ul class="one__chips" aria-label="Características">
+        <li>100% web</li><li>Boletas por WhatsApp y correo</li><li>Facturación electrónica</li><li>Informe DOH</li>
+      </ul>
+    </div>
+
+    <div class="one__panel">
+      <div class="one__tabs" role="tablist" aria-label="Información de NexoAPR">
+        <button role="tab" id="t-planes" aria-controls="p-planes" aria-selected="true" type="button">Planes</button>
+        <button role="tab" id="t-consulta" aria-controls="p-consulta" aria-selected="false" tabindex="-1" type="button">Consulta</button>
+        <button role="tab" id="t-links" aria-controls="p-links" aria-selected="false" tabindex="-1" type="button">Links de interés</button>
       </div>
-    </div>
-    <div class="product-wrap">
-      <div class="product-glow"></div>
-      <div class="product-frame">
-        <div class="framebar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="frameurl">NexoAPR · módulo de contabilidad</span></div>
-        <img class="product-shot" src="/assets/img/nexoapr-panel.webp" srcset="/assets/img/nexoapr-panel-800.webp 800w, /assets/img/nexoapr-panel.webp 1597w" sizes="(max-width:1040px) 100vw, 640px" alt="Pantalla de contabilidad de NexoAPR con menú de operación, cobranza, tesorería y reportes" width="1597" height="622" fetchpriority="high">
+
+      <div class="one__pane is-on" role="tabpanel" id="p-planes" aria-labelledby="t-planes">
+        <div class="one__plans">
+          <article class="plan">
+            <h2>Esencial</h2>
+            <p class="plan__for">Comités pequeños</p>
+            <ul><li>Socios, lecturas y facturación</li><li>Caja y cobranza</li><li>Boletas por correo</li></ul>
+            <button class="plan__btn" type="button" data-plan="Esencial">Consultar valor</button>
+          </article>
+          <article class="plan plan--star">
+            <p class="plan__badge">Más elegido</p>
+            <h2>Profesional</h2>
+            <p class="plan__for">Comités medianos</p>
+            <ul><li>Todo lo Esencial</li><li>Banco y contabilidad</li><li>Boletas por WhatsApp</li><li>Convenios de pago</li></ul>
+            <button class="plan__btn" type="button" data-plan="Profesional">Consultar valor</button>
+          </article>
+          <article class="plan">
+            <h2>Integral</h2>
+            <p class="plan__for">Comités grandes</p>
+            <ul><li>Todo lo Profesional</li><li>Informe DOH y balances</li><li>Asesoría Contador APR</li></ul>
+            <button class="plan__btn" type="button" data-plan="Integral">Consultar valor</button>
+          </article>
+        </div>
+        <p class="one__note">Migramos sus datos desde su sistema actual. Valores según el tamaño del comité.</p>
       </div>
-    </div>
-  </div>
-</section>
 
-<section class="flow-wrap">
-  <div class="section">
-    <div class="flow-title"><h2>De la lectura al <span>informe DOH</span>, todo conectado</h2></div>
-    <div class="flow">
-      <div class="flowitem"><div class="flowicon">💧</div><strong>Lecturas</strong><span>Ingreso y control mensual</span></div>
-      <div class="flowitem"><div class="flowicon">🧾</div><strong>Facturación</strong><span>Tarifas, subsidios y emisión</span></div>
-      <div class="flowitem"><div class="flowicon">💳</div><strong>Cobranza</strong><span>Pagos, deuda y morosidad</span></div>
-      <div class="flowitem"><div class="flowicon">💰</div><strong>Caja</strong><span>Recaudación y cierre diario</span></div>
-      <div class="flowitem"><div class="flowicon">🏦</div><strong>Banco</strong><span>Movimientos y conciliación</span></div>
-      <div class="flowitem"><div class="flowicon">📈</div><strong>Contabilidad</strong><span>Diario, Mayor y balances</span></div>
-      <div class="flowitem"><div class="flowicon">📄</div><strong>Informe DOH</strong><span>Información lista para reportar</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="funciones">
-  <div class="sectionhead">
-    <div class="eyebrow" style="color:#2763e6">Gestión integral para APR y SSR</div>
-    <h2>Un solo sistema para la operación y la administración</h2>
-    <p>NexoAPR conecta los procesos diarios del servicio con tesorería, contabilidad y reportabilidad, evitando duplicidad de información y planillas desconectadas.</p>
-  </div>
-  <div class="grid">
-    <article class="feature"><div class="icon">👥</div><h3>Socios, usuarios y arranques</h3><p>Titulares, servicios, medidores, estados e historial de cambios en una ficha única.</p></article>
-    <article class="feature"><div class="icon">💧</div><h3>Lecturas y producción</h3><p>Ingreso mensual, rutas, control de consumos, incidencias y trazabilidad del medidor.</p></article>
-    <article class="feature"><div class="icon">🧾</div><h3>Facturación y cobranza</h3><p>Tarifas, subsidios, deuda anterior, pagos, descuentos y seguimiento de morosidad.</p></article>
-    <article class="feature"><div class="icon">💰</div><h3>Tesorería</h3><p>Caja diaria, recaudación, comprobantes, egresos, banco y conciliación.</p></article>
-    <article class="feature"><div class="icon">📦</div><h3>Compras e inventario</h3><p>Proveedores, compras, existencias y movimientos de stock integrados a la gestión.</p></article>
-    <article class="feature"><div class="icon">📊</div><h3>Contabilidad y reportes</h3><p>Plan de cuentas, Libro Diario, Mayor, Balance 8 Columnas, Reporte Contador e informes DOH.</p></article>
-  </div>
-  <div class="btnrow"><a class="secondary secondary--dark" href="/p/modulos.html">Conocer cada módulo en detalle</a></div>
-</section>
-
-<section class="section" id="migracion">
-  <div class="migration">
-    <div>
-      <div class="eyebrow">Migración controlada</div>
-      <h2>Tu APR no parte de cero</h2>
-      <p>La migración identifica, cruza y valida padrón, servicios, medidores, lecturas y saldos antes de confirmar la carga. Las diferencias quedan visibles para conciliación y revisión.</p>
-      <div class="actions"><a class="secondary" href="/p/migracion.html">Cómo migramos su información</a></div>
-    </div>
-    <div class="steps">
-      <div class="step">1 · Detectar origen</div><div class="step">2 · Mapear información</div>
-      <div class="step">3 · Ejecutar prueba</div><div class="step">4 · Conciliar diferencias</div>
-      <div class="step">5 · Confirmar migración</div><div class="step">6 · Auditar resultado</div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="seguridad">
-  <div class="security">
-    <div>
-      <div class="eyebrow" style="color:#2763e6">Seguridad y trazabilidad</div>
-      <div class="sectionhead" style="margin-bottom:0">
-        <h2>La información del APR debe poder explicarse</h2>
-        <p>Los procesos sensibles se controlan con acceso por usuario, APR y roles, manteniendo la trazabilidad desde la operación diaria hasta el cierre contable.</p>
+      <div class="one__pane" role="tabpanel" id="p-consulta" aria-labelledby="t-consulta" hidden>
+        <form class="one__form" id="consulta" novalidate>
+          <label>Nombre<input name="nombre" autocomplete="name" required></label>
+          <label>Comité o cooperativa<input name="comite" required></label>
+          <label>Teléfono / WhatsApp<input name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="+56 9 1234 5678" required></label>
+          <label>Correo (opcional)<input name="correo" type="email" autocomplete="email"></label>
+          <label class="one__wide">Plan de interés
+            <select name="plan"><option value="">Aún no sé</option><option>Esencial</option><option>Profesional</option><option>Integral</option></select>
+          </label>
+          <label class="one__wide">Consulta<textarea name="mensaje" rows="2" placeholder="Cuéntenos qué necesita su comité"></textarea></label>
+          <input class="one__trap" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="one__btn one__btn--primary one__wide" type="submit">Enviar consulta</button>
+          <p class="one__status one__wide" id="consulta-estado" role="status"></p>
+        </form>
       </div>
-    </div>
-    <div class="securitybox">
-      <strong>Controles de NexoAPR</strong>
-      <div class="securitylist">
-        <div class="securityitem"><span class="check">✓</span><span>Acceso autenticado y permisos por rol.</span></div>
-        <div class="securityitem"><span class="check">✓</span><span>Información separada por APR.</span></div>
-        <div class="securityitem"><span class="check">✓</span><span>Operaciones críticas con estados e historial.</span></div>
-        <div class="securityitem"><span class="check">✓</span><span>Origen verificable para caja, banco y contabilidad.</span></div>
+
+      <div class="one__pane" role="tabpanel" id="p-links" aria-labelledby="t-links" hidden>
+        <ul class="one__links">
+          <li><a href="https://www.bcn.cl/leychile/navegar?idNorma=1100197" rel="noopener" target="_blank">Ley 20.998 de Servicios Sanitarios Rurales<small>Biblioteca del Congreso Nacional</small></a></li>
+          <li><a href="https://www.bcn.cl/leychile/navegar?i=1150724" rel="noopener" target="_blank">Reglamento de la Ley 20.998 (Decreto 50)<small>Biblioteca del Congreso Nacional</small></a></li>
+          <li><a href="https://www.bcn.cl/leychile/navegar?idNorma=1194223" rel="noopener" target="_blank">Ley 21.581: exención de IVA a los SSR<small>Biblioteca del Congreso Nacional</small></a></li>
+          <li><a href="https://doh.mop.gob.cl/" rel="noopener" target="_blank">Dirección de Obras Hidráulicas (DOH)<small>Ministerio de Obras Públicas</small></a></li>
+          <li><a href="https://www.siss.gob.cl/" rel="noopener" target="_blank">Superintendencia de Servicios Sanitarios<small>SISS</small></a></li>
+          <li><a href="https://www.sii.cl/" rel="noopener" target="_blank">Servicio de Impuestos Internos<small>SII</small></a></li>
+          <li><a href="https://www.previred.com/" rel="noopener" target="_blank">Previred<small>Cotizaciones previsionales</small></a></li>
+          <li><a href="/blog/">Guías de gestión APR<small>NexoAPR</small></a></li>
+          <li><a href="https://www.contadorapr.cl/">Contador APR<small>Contabilidad y asesoría para comités</small></a></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="backed">
-    <div>
-      <div class="eyebrow" style="color:#2763e6">Hecho por contadores de comités</div>
-      <h2>Detrás de NexoAPR hay más de 10 años de trabajo con APR y SSR</h2>
-      <p>NexoAPR nace en <a href="https://www.contadorapr.cl/" style="color:#2763e6;font-weight:700">Contador APR</a>, la consultora que lleva la contabilidad, las remuneraciones y los informes DOH de comités de Arica a Quellón. Cada módulo responde a un problema que vimos en terreno: lecturas en cuadernos, cobros en planillas y un informe DOH armado a última hora.</p>
-      <p>Por eso el sistema habla el idioma de la directiva, de la secretaria y del contador.</p>
-      <div class="actions"><a class="secondary secondary--dark" href="https://www.contadorapr.cl/p/nexoapr.html">La historia de NexoAPR</a></div>
-    </div>
-    <div class="backed__facts">
-      <div><strong>+10 años</strong><span>de experiencia exclusiva en comités APR y SSR</span></div>
-      <div><strong>Arica a Quellón</strong><span>comités asesorados por el equipo</span></div>
-      <div><strong>Plan de cuentas DOH</strong><span>la contabilidad pensada para el informe</span></div>
-    </div>
-  </div>
-</section>
+<script>
+(() => {
+  // Intro en video: una vez por visita (sesión del navegador), nunca con «movimiento reducido»; «Saltar intro» o al
+  // terminar se desvanece hacia la portada. Si el navegador no deja reproducir, no se muestra.
+  const intro = document.getElementById('intro'), video = document.getElementById('intro-video');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let seen = false; try { seen = sessionStorage.getItem('nexo-intro') === '1'; } catch {}
+  const close = () => { if (intro.hidden) return; intro.classList.add('is-out'); try { sessionStorage.setItem('nexo-intro', '1'); } catch {} setTimeout(() => { intro.hidden = true; video.pause(); }, 600); };
+  if (intro && video && !reduce && !seen && !location.hash) {
+    intro.hidden = false;
+    video.play().catch(() => { intro.hidden = true; });
+    video.addEventListener('ended', close);
+    document.getElementById('intro-skip').addEventListener('click', close);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    setTimeout(close, 14000);
+  }
+})();
+(() => {
+  const words = ['Lecturas y rutas', 'Facturación electrónica', 'Cobranza y morosidad', 'Caja diaria', 'Boletas por WhatsApp', 'Banco y conciliación', 'Contabilidad', 'Informe DOH'];
+  const rotor = document.getElementById('rotor');
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i = 0;
+  if (rotor && !still) setInterval(() => {
+    rotor.classList.add('is-out');
+    setTimeout(() => { i = (i + 1) % words.length; rotor.textContent = words[i]; rotor.classList.remove('is-out'); }, 350);
+  }, 2600);
 
-<section class="band">
-  <div class="section">
-    <div class="sectionhead">
-      <div class="eyebrow" style="color:#2763e6">Guías</div>
-      <h2>Gestión digital para comités de agua</h2>
-      <p>Ideas prácticas para ordenar lecturas, cobranza, tesorería y contabilidad del APR.</p>
-    </div>
-    <!-- GUIAS:3 -->
-  </div>
-</section>
+  const tabs = [...document.querySelectorAll('.one__tabs [role=tab]')];
+  const show = (name) => tabs.forEach((t) => {
+    const on = t.id === 't-' + name;
+    t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
+    const pane = document.getElementById(t.getAttribute('aria-controls'));
+    pane.hidden = !on; pane.classList.toggle('is-on', on);
+  });
+  tabs.forEach((t, k) => {
+    t.addEventListener('click', () => show(t.id.slice(2)));
+    t.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const n = tabs[(k + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; n.focus(); show(n.id.slice(2));
+    });
+  });
+  // nexoapr.cl/#consulta, #planes o #links abre esa pestaña (enlaces de campañas y del menú).
+  const fromHash = () => { const h = location.hash.slice(1); if (['planes', 'consulta', 'links'].includes(h)) show(h); };
+  fromHash(); window.addEventListener('hashchange', fromHash);
+  const form = document.getElementById('consulta');
+  document.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => { show(b.dataset.go); form.nombre.focus(); }));
+  document.querySelectorAll('[data-plan]').forEach((b) => b.addEventListener('click', () => { form.plan.value = b.dataset.plan; show('consulta'); form.nombre.focus(); }));
 
-<section class="section">
-  <div class="sectionhead"><h2>Preguntas frecuentes</h2></div>
-  <div class="faq">
-    <details><summary>¿Qué es NexoAPR?</summary><p>Es un ERP web hecho para comités de agua potable rural y servicios sanitarios rurales de Chile. Reúne socios, lecturas, facturación, cobranza, caja, banco, compras, contabilidad e informe DOH en una sola plataforma.</p></details>
-    <details><summary>¿Hay que instalar algo en el computador del comité?</summary><p>No. NexoAPR funciona 100% en el navegador, por lo que se puede usar desde la oficina del comité o desde la casa de un dirigente con acceso autorizado.</p></details>
-    <details><summary>¿Podemos traspasar la información que ya tenemos?</summary><p>Sí. La migración controlada revisa padrón, servicios, medidores, lecturas y saldos, hace una prueba, concilia diferencias y recién después confirma la carga.</p></details>
-    <details><summary>¿Cómo puedo ver el sistema funcionando?</summary><p>Solicite una demostración desde el formulario o por WhatsApp al +56 9 4014 4218 y la coordinamos en línea.</p></details>
-  </div>
-</section>
-
-<section class="cta">
-  <div>
-    <h2>Vea NexoAPR funcionando con datos de un comité</h2>
-    <p>Coordinamos una demostración en línea y revisamos cómo implementarlo en su APR o SSR.</p>
-  </div>
-  <a class="primary" href="/p/demostracion.html">Solicitar demostración</a>
-</section>
+  const status = document.getElementById('consulta-estado');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(form));
+    if (d.nombre.trim().length < 2 || d.comite.trim().length < 2 || d.telefono.replace(/\D/g, '').length < 8) { status.textContent = 'Complete nombre, comité y teléfono.'; return; }
+    d.mensaje = [d.plan ? `Plan de interés: ${d.plan}` : '', d.mensaje].filter(Boolean).join('\n');
+    const btn = form.querySelector('button[type=submit]'); btn.disabled = true; status.textContent = 'Enviando…';
+    try {
+      const r = await fetch('/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || !j.ok) throw new Error(j.error || 'No se pudo enviar.');
+      form.reset(); status.textContent = '¡Gracias! Le contactaremos a la brevedad.';
+    } catch (err) { status.textContent = (err && err.message) || 'No se pudo enviar. Escríbanos por WhatsApp al +56 9 4014 4218.'; }
+    finally { btn.disabled = false; }
+  });
+})();
+</script>
