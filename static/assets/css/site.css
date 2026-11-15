@@ -231,3 +231,11 @@ p{line-height:1.6}
 }
 @media (max-width:560px){.one__form,.one__links{grid-template-columns:1fr}.one__tabs button{font-size:13px}}
 @media (prefers-reduced-motion:reduce){.one__wave,.one__drop,.one__panel,.one__pane.is-on{animation:none}.one__drop{display:none}.plan,.one__links a{transition:none}}
+/* Intro en video (una vez por visita) */
+.intro{position:fixed;inset:0;z-index:100;background:#071a2b;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease}
+.intro[hidden]{display:none}
+.intro.is-out{opacity:0;pointer-events:none}
+.intro__video{height:100%;width:100%;object-fit:cover;background:#071a2b}
+.intro__skip{position:absolute;right:20px;bottom:20px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.6);background:rgba(7,26,43,.55);color:#fff;font:700 14px Inter,system-ui,sans-serif;cursor:pointer}
+.intro__skip:hover{background:rgba(255,255,255,.15)}
+@media (min-aspect-ratio:1/1){.intro__video{width:auto;object-fit:contain}}

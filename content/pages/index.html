@@ -4,6 +4,12 @@ title: NexoAPR | ERP y sistema de gestión para APR y SSR en Chile
 description: NexoAPR es el ERP web para comités APR y SSR: lecturas, facturación, cobranza, caja, banco, contabilidad e informe DOH en una sola plataforma. Consulte planes.
 nav: home
 -->
+<div class="intro" id="intro" hidden>
+  <video class="intro__video" id="intro-video" muted playsinline preload="auto" poster="/assets/video/intro-nexoapr.jpg" aria-label="Presentación de NexoAPR: una gota cae sobre el agua y aparece el sistema en un notebook">
+    <source src="/assets/video/intro-nexoapr.mp4" type="video/mp4">
+  </video>
+  <button class="intro__skip" id="intro-skip" type="button">Saltar intro</button>
+</div>
 <section class="one" aria-label="NexoAPR en una pantalla">
   <div class="one__bg" aria-hidden="true">
     <span class="one__drop one__drop--a"></span><span class="one__drop one__drop--b"></span><span class="one__drop one__drop--c"></span>
@@ -95,6 +101,22 @@ nav: home
 </section>
 
 <script>
+(() => {
+  // Intro en video: una vez por visita (sesión del navegador), nunca con «movimiento reducido»; «Saltar intro» o al
+  // terminar se desvanece hacia la portada. Si el navegador no deja reproducir, no se muestra.
+  const intro = document.getElementById('intro'), video = document.getElementById('intro-video');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let seen = false; try { seen = sessionStorage.getItem('nexo-intro') === '1'; } catch {}
+  const close = () => { if (intro.hidden) return; intro.classList.add('is-out'); try { sessionStorage.setItem('nexo-intro', '1'); } catch {} setTimeout(() => { intro.hidden = true; video.pause(); }, 600); };
+  if (intro && video && !reduce && !seen && !location.hash) {
+    intro.hidden = false;
+    video.play().catch(() => { intro.hidden = true; });
+    video.addEventListener('ended', close);
+    document.getElementById('intro-skip').addEventListener('click', close);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    setTimeout(close, 14000);
+  }
+})();
 (() => {
   const words = ['Lecturas y rutas', 'Facturación electrónica', 'Cobranza y morosidad', 'Caja diaria', 'Boletas por WhatsApp', 'Banco y conciliación', 'Contabilidad', 'Informe DOH'];
   const rotor = document.getElementById('rotor');
