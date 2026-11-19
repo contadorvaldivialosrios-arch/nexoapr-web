@@ -40,6 +40,7 @@ nav: home
         <button role="tab" id="t-planes" aria-controls="p-planes" aria-selected="true" type="button">Planes</button>
         <button role="tab" id="t-consulta" aria-controls="p-consulta" aria-selected="false" tabindex="-1" type="button">Consulta</button>
         <button role="tab" id="t-links" aria-controls="p-links" aria-selected="false" tabindex="-1" type="button">Links de interés</button>
+        <button role="tab" id="t-redes" aria-controls="p-redes" aria-selected="false" tabindex="-1" type="button">Redes</button>
       </div>
 
       <div class="one__pane is-on" role="tabpanel" id="p-planes" aria-labelledby="t-planes">
@@ -96,6 +97,18 @@ nav: home
           <li><a href="https://www.contadorapr.cl/">Contador APR<small>Contabilidad y asesoría para comités</small></a></li>
         </ul>
       </div>
+      <div class="one__pane" role="tabpanel" id="p-redes" aria-labelledby="t-redes" hidden>
+        <div class="one__redes">
+          <div class="one__red">
+            <iframe data-src="https://www.youtube-nocookie.com/embed/videoseries?list=UUaDMz7VRTxdrQav7gaQvgYg" title="Videos del canal NexoAPR en YouTube" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            <a href="https://www.youtube.com/@NexoAPR?sub_confirmation=1" rel="noopener" target="_blank">YouTube · @NexoAPR<small>Videos de capacitación · Suscríbete</small></a>
+          </div>
+          <div class="one__red">
+            <iframe data-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnexoapr&amp;tabs=timeline&amp;width=500&amp;height=230&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true" title="Publicaciones de NexoAPR en Facebook" loading="lazy" scrolling="no" allow="encrypted-media"></iframe>
+            <a href="https://www.facebook.com/nexoapr" rel="noopener" target="_blank">Facebook · NexoAPR<small>Novedades, demostraciones y comentarios</small></a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -133,6 +146,8 @@ nav: home
     t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
     const pane = document.getElementById(t.getAttribute('aria-controls'));
     pane.hidden = !on; pane.classList.toggle('is-on', on);
+    // Los videos y Facebook se cargan recién al abrir «Redes», para no pesar la portada.
+    if (on) pane.querySelectorAll('iframe[data-src]').forEach((f) => { f.src = f.dataset.src; f.removeAttribute('data-src'); });
   });
   tabs.forEach((t, k) => {
     t.addEventListener('click', () => show(t.id.slice(2)));
@@ -142,7 +157,7 @@ nav: home
     });
   });
   // nexoapr.cl/#consulta, #planes o #links abre esa pestaña (enlaces de campañas y del menú).
-  const fromHash = () => { const h = location.hash.slice(1); if (['planes', 'consulta', 'links'].includes(h)) show(h); };
+  const fromHash = () => { const h = location.hash.slice(1); if (['planes', 'consulta', 'links', 'redes'].includes(h)) show(h); };
   fromHash(); window.addEventListener('hashchange', fromHash);
   const form = document.getElementById('consulta');
   document.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => { show(b.dataset.go); form.nombre.focus(); }));
