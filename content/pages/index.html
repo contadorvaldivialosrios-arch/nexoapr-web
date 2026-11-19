@@ -8,7 +8,7 @@ nav: home
   <video class="intro__video" id="intro-video" muted playsinline preload="auto" poster="/assets/video/intro-nexoapr.jpg" aria-label="Presentación de NexoAPR: una gota cae sobre el agua y aparece el sistema en un notebook">
     <source src="/assets/video/intro-nexoapr.mp4" type="video/mp4">
   </video>
-  <button class="intro__sound" id="intro-sound" type="button" hidden>&#128266; Activar sonido</button>
+  <button class="intro__sound" id="intro-sound" type="button" hidden><span class="intro__sound-ico">&#128266;</span>Toca para escuchar</button>
   <button class="intro__skip" id="intro-skip" type="button">Saltar intro</button>
 </div>
 <section class="one" aria-label="NexoAPR en una pantalla">
@@ -131,7 +131,12 @@ nav: home
       video.muted = true;
       video.play().then(() => { sound.hidden = false; }).catch(() => { intro.hidden = true; });
     });
-    sound.addEventListener('click', () => { video.muted = false; sound.hidden = true; });
+    // Cualquier toque o clic sobre la intro (salvo «Saltar intro») la reinicia desde el comienzo, con sonido.
+    const conSonido = (e) => {
+      if (!video.muted || e.target.closest('#intro-skip')) return;
+      video.muted = false; video.currentTime = 0; video.play(); sound.hidden = true;
+    };
+    intro.addEventListener('click', conSonido);
     video.addEventListener('ended', close);
     document.getElementById('intro-skip').addEventListener('click', close);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
