@@ -51,6 +51,7 @@ h1 span{color:#58d2ff}.copy{max-width:610px;margin:0;font-size:20px;line-height:
 .floating-social.email{background:linear-gradient(135deg,#1e56d9,#0b5fc6)}
 .floating-social.whatsapp{background:linear-gradient(135deg,#1fbf69,#15915d)}
 .floating-social.facebook{background:linear-gradient(135deg,#2f88ff,#1877f2)}
+.floating-social.youtube{background:linear-gradient(135deg,#ff3b30,#d70000)}
 .floating-social .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:620px){.floating-socials{right:12px;bottom:12px}.floating-social{width:48px;height:48px;border-radius:14px;font-size:20px}}
 
