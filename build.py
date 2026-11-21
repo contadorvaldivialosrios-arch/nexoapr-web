@@ -110,7 +110,7 @@ MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto
          "septiembre", "octubre", "noviembre", "diciembre"]
 
 
-def render(*, path, title, description, content, og_type="website", robots="", graph_extra=(), image=None, nav=""):
+def render(*, path, title, description, content, og_description=None, og_type="website", robots="", graph_extra=(), image=None, nav=""):
     url = BASE + path
     graph = [ORG, WEBSITE, APP] + list(graph_extra)
     robots_meta = '<meta name="robots" content="noindex, nofollow">' if robots == "noindex" else \
@@ -121,6 +121,7 @@ def render(*, path, title, description, content, og_type="website", robots="", g
                    + SITE["adsense_client"] + '" crossorigin="anonymous"></script>')
     rep = {
         "title": esc(title), "description": esc(description), "url": esc(url),
+        "og_description": esc(og_description or description),
         "og_type": og_type, "og_image": esc(BASE + (image or SITE["og_image"])),
         "robots_meta": robots_meta, "base": BASE, "build": BUILD, "year": YEAR,
         "jsonld": json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False).replace("</", "<\\/"),
@@ -243,7 +244,7 @@ def build():
             extra.append({"@type": "FAQPage", "@id": BASE + p["path"] + "#faq", "mainEntity": faq})
         write(p["path"] if p["path"] != "/" else "/index.html",
               render(path=p["path"], title=p["title"], description=p["description"],
-                     content=body, robots=p.get("robots", ""), graph_extra=extra, nav=p.get("nav", "")))
+                     og_description=p.get("og_description"), content=body, robots=p.get("robots", ""), graph_extra=extra, nav=p.get("nav", "")))
         if p.get("robots") != "noindex":
             sitemap.append((p["path"], p.get("updated", "")))
 
