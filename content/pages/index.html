@@ -23,9 +23,10 @@ nav: home
     <div class="one__hero">
       <p class="eyebrow">Para la directiva y la secretaria de su APR o SSR</p>
       <h1 id="hero-titulo">Lecturas, boletas, cobranza y caja en un solo lugar, <span>y el informe DOH sale solo</span></h1>
-      <p class="one__rotor" aria-live="off">
+      <!-- Sin JavaScript (o con «movimiento reducido») se lee la frase completa; el script la cambia por la palabra rotativa. -->
+      <p class="one__rotor" id="rotor-linea">
         <span class="one__rotor-label">Un solo sistema para</span>
-        <span class="one__rotor-word" id="rotor">las lecturas del mes</span>
+        <span class="one__rotor-word" id="rotor">lecturas, boletas, cobranza y caja</span>
       </p>
       <p class="one__copy">Se acabaron las planillas sueltas y el cuaderno de caja. Lo que la secretaria registra cada día llega solo a la contabilidad, y la directiva ve en cualquier momento cuánto se recaudó, quién debe y cómo está el banco.</p>
       <div class="one__actions">
@@ -38,11 +39,41 @@ nav: home
       </ul>
     </div>
 
-    <figure class="shot shot--hero">
-      <!-- CAPTURAS PENDIENTES (datos ficticios) -->
-      <div class="shot__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="shot__frame"><p>Captura de pantalla próximamente</p></div>
-      <figcaption>Panel de NexoAPR: socios, lecturas, cobranza, caja y contabilidad en el mismo menú.</figcaption>
+    <figure class="demo">
+      <!-- Panel de ejemplo hecho en HTML/CSS: comité y cifras ficticias, redondas a propósito. No usar datos de comités reales. -->
+      <div class="demo__win" role="img" aria-label="Panel de ejemplo de NexoAPR para el Comité APR Ejemplo, con datos ficticios: recaudado del mes 4.000.000 pesos, 20 socios con deuda, saldo banco 10.000.000 pesos y 180 de 200 lecturas ingresadas.">
+        <div class="demo__top" aria-hidden="true">
+          <span class="demo__dots"><span></span><span></span><span></span></span>
+          <span class="demo__brand">Nexo<b>APR</b></span>
+          <span class="demo__org">Comité APR Ejemplo</span>
+          <span class="demo__per">Noviembre</span>
+        </div>
+        <div class="demo__body" aria-hidden="true">
+          <ul class="demo__side">
+            <li class="is-on">Inicio</li><li>Socios</li><li>Lecturas</li><li>Boletas</li><li>Caja</li><li>Cobranza</li><li>Banco</li><li>Contabilidad</li>
+          </ul>
+          <div class="demo__main">
+            <div class="demo__kpis">
+              <div class="demo__kpi demo__kpi--ok"><span class="demo__k">Recaudado del mes</span><strong>$4.000.000</strong><small>160 boletas pagadas</small></div>
+              <div class="demo__kpi demo__kpi--warn"><span class="demo__k">Socios con deuda</span><strong>20</strong><small>de 200 socios</small></div>
+              <div class="demo__kpi"><span class="demo__k">Saldo banco</span><strong>$10.000.000</strong><small>Conciliado al día</small></div>
+              <div class="demo__kpi"><span class="demo__k">Lecturas ingresadas</span><strong>180<em> / 200</em></strong><span class="demo__prog"><span style="width:90%"></span></span></div>
+            </div>
+            <div class="demo__chart">
+              <p class="demo__ct">Recaudación por mes</p>
+              <ol class="demo__bars">
+              <li style="--h:75%"><span class="demo__val">$3,0 M</span><span class="demo__bar"></span><span class="demo__mes">Jun</span></li>
+              <li style="--h:87.5%"><span class="demo__val">$3,5 M</span><span class="demo__bar"></span><span class="demo__mes">Jul</span></li>
+              <li style="--h:75%"><span class="demo__val">$3,0 M</span><span class="demo__bar"></span><span class="demo__mes">Ago</span></li>
+              <li style="--h:87.5%"><span class="demo__val">$3,5 M</span><span class="demo__bar"></span><span class="demo__mes">Sep</span></li>
+              <li style="--h:87.5%"><span class="demo__val">$3,5 M</span><span class="demo__bar"></span><span class="demo__mes">Oct</span></li>
+              <li class="is-now" style="--h:100%"><span class="demo__val">$4,0 M</span><span class="demo__bar"></span><span class="demo__mes">Nov</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>Imagen ilustrativa con datos de ejemplo</figcaption>
     </figure>
   </div>
 </section>
@@ -236,6 +267,33 @@ nav: home
 </section>
 
 <script>
+// Palabra rotativa bajo el título. Reglas: el texto siempre queda visible (la animación solo hace aparecer la palabra
+// nueva, nunca la deja oculta esperando un temporizador), se detiene con la pestaña en segundo plano y con
+// «movimiento reducido» se queda la frase completa que viene en el HTML.
+(() => {
+  const rotor = document.getElementById('rotor');
+  if (!rotor) return;
+  const frase = rotor.textContent;
+  const words = ['lecturas', 'boletas', 'cobranza', 'caja', 'convenios', 'banco', 'informe DOH'];
+  const reduce = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
+  let i = 0, timer = 0;
+  const put = (txt) => { rotor.textContent = txt; rotor.classList.remove('is-in'); void rotor.offsetWidth; rotor.classList.add('is-in'); };
+  const stop = () => { if (timer) clearInterval(timer); timer = 0; };
+  const sync = () => {
+    stop();
+    if (reduce.matches) { rotor.classList.remove('is-in', 'is-word'); rotor.textContent = frase; return; }
+    rotor.classList.add('is-word');
+    if (rotor.textContent !== words[i]) rotor.textContent = words[i];
+    if (!document.hidden) timer = setInterval(() => { i = (i + 1) % words.length; put(words[i]); }, 2200);
+  };
+  try {
+    sync();
+    document.addEventListener('visibilitychange', sync);
+    if (reduce.addEventListener) reduce.addEventListener('change', sync);
+  } catch (e) { stop(); rotor.textContent = frase; }
+})();
+</script>
+<script>
 (() => {
   // Intro en video: una vez por visita (sesión del navegador), nunca con «movimiento reducido»; «Saltar intro» o al
   // terminar se desvanece hacia la portada. Si el navegador no deja reproducir, no se muestra.
@@ -258,15 +316,6 @@ nav: home
   }
 })();
 (() => {
-  const words = ['las lecturas del mes', 'las boletas electrónicas', 'la cobranza y los convenios', 'la caja diaria', 'el banco', 'la contabilidad', 'el informe DOH'];
-  const rotor = document.getElementById('rotor');
-  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let i = 0;
-  if (rotor && !still) setInterval(() => {
-    rotor.classList.add('is-out');
-    setTimeout(() => { i = (i + 1) % words.length; rotor.textContent = words[i]; rotor.classList.remove('is-out'); }, 350);
-  }, 2600);
-
   const tabs = [...document.querySelectorAll('.one__tabs [role=tab]')];
   const show = (name) => tabs.forEach((t) => {
     const on = t.id === 't-' + name;

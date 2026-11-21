@@ -168,8 +168,9 @@ p{line-height:1.6}
 .one h1 span{color:#35b8ff}
 .one__rotor{margin:18px 0 0;font-size:20px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
 .one__rotor-label{color:#b9cbe4}
-.one__rotor-word{font-weight:800;color:#fff;border-bottom:3px solid #f59e0b;transition:opacity .35s,transform .35s;display:inline-block}
-.one__rotor-word.is-out{opacity:0;transform:translateY(-8px)}
+.one__rotor-word{font-weight:800;color:#fff;border-bottom:3px solid #f59e0b;display:inline-block}
+.one__rotor-word.is-in{animation:one-rotor .45s ease-out}
+@keyframes one-rotor{from{opacity:.15;transform:translateY(8px)}to{opacity:1;transform:none}}
 .one__copy{margin:14px 0 0;color:#d4e1f2;font-size:17px;line-height:1.5;max-width:520px}
 .one__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .one__btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:12px;font-weight:800;font-size:16px;cursor:pointer;border:0;font-family:inherit;text-decoration:none}
@@ -278,5 +279,49 @@ p{line-height:1.6}
 .floating-social.whatsapp{width:60px;height:60px}
 @media (max-width:999px){.one__in{padding:26px 0 80px}.day,.shots{grid-template-columns:1fr 1fr}.sec__two{grid-template-columns:1fr;gap:28px}.close{flex-direction:column;align-items:flex-start}}
 @media (max-width:620px){.sec{padding:52px 0}.sec__in,.sec__narrow{width:calc(100% - 32px)}.day,.shots{grid-template-columns:1fr}.one__actions .one__btn,.close__acts .one__btn{width:100%}.close{padding:26px}.floating-social.whatsapp{width:56px;height:56px}}
-@media (prefers-reduced-motion:reduce){.shot--hero{animation:none}}
+@media (prefers-reduced-motion:reduce){.shot--hero,.demo,.demo__bar,.one__rotor-word.is-in{animation:none}}
+
+/* Capturas pendientes de «Así se ve»: marcos chicos y discretos */
+.shots .shot{box-shadow:none;border-color:#e3eaf4}
+.shots .shot__frame{aspect-ratio:auto;min-height:92px;background:#f8fafd;color:#8596ad;font-weight:600;font-size:13px;padding:12px}
+.shots .shot__frame p{padding:0;border:0;background:none}
+
+/* Panel de ejemplo del hero (HTML/CSS, datos ficticios) */
+.demo{margin:0;min-width:0;animation:one-rise .7s ease-out both}
+.demo__win{background:#fff;color:#0f2346;border-radius:18px;overflow:hidden;box-shadow:0 30px 70px rgba(4,14,34,.38);font-size:13px;line-height:1.3}
+.demo__top{display:flex;align-items:center;gap:12px;padding:10px 14px;background:#0f2346;color:#fff}
+.demo__dots{display:flex;gap:5px}.demo__dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.28)}
+.demo__brand{font-weight:900;font-size:15px;letter-spacing:-.01em}.demo__brand b{color:#35b8ff}
+.demo__org{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#cfe0f5;font-weight:600}
+.demo__per{padding:4px 10px;border-radius:999px;background:rgba(53,184,255,.18);color:#bfe8ff;font-weight:700;font-size:12px}
+.demo__body{display:grid;grid-template-columns:128px 1fr;min-height:0}
+.demo__side{list-style:none;margin:0;padding:12px 8px;background:#f2f6fc;border-right:1px solid #e1e9f4;display:flex;flex-direction:column;gap:2px}
+.demo__side li{padding:7px 10px;border-radius:8px;color:#4a5f7d;font-weight:600}
+.demo__side li.is-on{background:#2763e6;color:#fff}
+.demo__main{padding:14px;display:grid;gap:12px;min-width:0;background:#fbfcfe}
+.demo__kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.demo__kpi{min-width:0;background:#fff;border:1px solid #e1e9f4;border-left:4px solid #2763e6;border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:3px}
+.demo__kpi--ok{border-left-color:#35b8ff}.demo__kpi--warn{border-left-color:#f59e0b}
+.demo__k{color:#5b6f8c;font-weight:600;font-size:12px}
+.demo__kpi strong{font-size:22px;font-weight:900;letter-spacing:-.02em;color:#0f2346;white-space:nowrap}
+.demo__kpi strong em{font-style:normal;font-size:14px;font-weight:700;color:#7b8ca5}
+.demo__kpi small{color:#6a7d97;font-size:11.5px}
+.demo__prog{display:block;height:6px;border-radius:99px;background:#e4ecf7;overflow:hidden;margin-top:4px}.demo__prog span{display:block;height:100%;background:linear-gradient(90deg,#2763e6,#35b8ff);border-radius:99px}
+.demo__chart{background:#fff;border:1px solid #e1e9f4;border-radius:12px;padding:10px 12px 8px}
+.demo__ct{margin:0 0 6px;font-weight:800;font-size:12.5px;color:#0f2346}
+.demo__bars{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;height:128px;align-items:end}
+.demo__bars li{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;min-width:0}
+.demo__bar{width:100%;max-width:38px;height:calc(var(--h) * .72);border-radius:6px 6px 2px 2px;background:#bcd3fb;transform-origin:bottom;animation:demo-bar .8s ease-out both}
+.demo__bars li.is-now .demo__bar{background:linear-gradient(180deg,#35b8ff,#2763e6)}
+.demo__val{font-size:10.5px;font-weight:700;color:#5b6f8c;white-space:nowrap}.demo__bars li.is-now .demo__val{color:#2763e6}
+.demo__mes{font-size:11px;color:#7b8ca5;font-weight:600}
+.demo figcaption{margin-top:10px;text-align:center;font-size:12px;color:#a9bfdc}
+@keyframes demo-bar{from{transform:scaleY(.2)}to{transform:none}}
+@media (max-width:560px){
+  .demo__body{grid-template-columns:1fr}.demo__side{display:none}
+  .demo__main{padding:10px;gap:10px}.demo__kpis{gap:8px}
+  .demo__kpi{padding:8px 10px}.demo__kpi strong{font-size:18px}.demo__k{font-size:11px}
+  .demo__bars{gap:6px;height:112px}.demo__val{font-size:9.5px}
+  .demo__per{display:none}
+}
 @media (max-width:620px){.floating-social:not(.whatsapp){display:none}}
