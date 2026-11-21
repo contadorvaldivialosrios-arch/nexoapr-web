@@ -1,7 +1,8 @@
 <!--
 path: /
 title: NexoAPR | ERP y sistema de gestión para APR y SSR en Chile
-description: NexoAPR es el ERP web para comités APR y SSR: lecturas, facturación, cobranza, caja, banco, contabilidad e informe DOH en una sola plataforma. Consulte planes.
+description: Sistema web para comités APR y SSR: lecturas, boletas electrónicas por WhatsApp o correo, cobranza, caja, banco, contabilidad e informe DOH. Pida una demostración.
+og_description: Lecturas, boletas, cobranza y caja en un solo lugar, y el informe DOH sale solo. Migramos los datos de su comité sin tocar su sistema actual.
 nav: home
 -->
 <div class="intro" id="intro" hidden>
@@ -10,7 +11,8 @@ nav: home
   </video>
   <button class="intro__skip" id="intro-skip" type="button">Saltar intro</button>
 </div>
-<section class="one" aria-label="NexoAPR en una pantalla">
+
+<section class="one" aria-labelledby="hero-titulo">
   <div class="one__bg" aria-hidden="true">
     <span class="one__drop one__drop--a"></span><span class="one__drop one__drop--b"></span><span class="one__drop one__drop--c"></span>
     <svg class="one__wave one__wave--back" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 60 C240 10 480 110 720 60 S1200 10 1440 60 V120 H0Z"/></svg>
@@ -19,24 +21,98 @@ nav: home
 
   <div class="one__in">
     <div class="one__hero">
-      <p class="eyebrow">ERP especializado para APR y SSR de Chile</p>
-      <h1>Su comité de agua, <span>en un solo sistema</span></h1>
-      <p class="one__rotor" aria-live="polite">
-        <span class="one__rotor-label">Hoy resolvemos:</span>
-        <span class="one__rotor-word" id="rotor">Lecturas y rutas</span>
+      <p class="eyebrow">Para la directiva y la secretaria de su APR o SSR</p>
+      <h1 id="hero-titulo">Lecturas, boletas, cobranza y caja en un solo lugar, <span>y el informe DOH sale solo</span></h1>
+      <p class="one__rotor" aria-live="off">
+        <span class="one__rotor-label">Un solo sistema para</span>
+        <span class="one__rotor-word" id="rotor">las lecturas del mes</span>
       </p>
-      <p class="one__copy">De la lectura al informe DOH, todo conectado. Desarrollado por contadores con más de 10 años en comités de agua.</p>
+      <p class="one__copy">Se acabaron las planillas sueltas y el cuaderno de caja. Lo que la secretaria registra cada día llega solo a la contabilidad, y la directiva ve en cualquier momento cuánto se recaudó, quién debe y cómo está el banco.</p>
       <div class="one__actions">
-        <button class="one__btn one__btn--primary" type="button" data-go="consulta">Consultar ahora</button>
-        <a class="one__btn one__btn--ghost" href="https://nexoapr-app.pages.dev/" rel="noopener">Ingresar a la plataforma</a>
+        <a class="one__btn one__btn--primary" href="/p/demostracion.html">Pida una demostración</a>
+        <a class="one__btn one__btn--wa" href="https://wa.me/56940144218?text=Hola%2C%20quiero%20pedir%20una%20demostraci%C3%B3n%20de%20NexoAPR%20para%20nuestro%20comit%C3%A9." rel="noopener">WhatsApp +56 9 4014 4218</a>
       </div>
+      <p class="one__sub">Demostración en línea y sin compromiso. ¿Ya es cliente? <a href="https://nexoapr-app.pages.dev/" rel="noopener">Ingrese a la plataforma</a>.</p>
       <ul class="one__chips" aria-label="Características">
-        <li>100% web</li><li>Boletas por WhatsApp y correo</li><li>Facturación electrónica</li><li>Informe DOH</li>
+        <li>100% web</li><li>Boletas por WhatsApp y correo</li><li>Facturación electrónica</li><li>Informe DOH</li><li>Migramos sus datos</li>
       </ul>
     </div>
 
+    <figure class="shot shot--hero">
+      <!-- CAPTURAS PENDIENTES (datos ficticios) -->
+      <div class="shot__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="shot__frame"><p>Captura de pantalla próximamente</p></div>
+      <figcaption>Panel de NexoAPR: socios, lecturas, cobranza, caja y contabilidad en el mismo menú.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="un-dia" aria-labelledby="un-dia-titulo">
+  <div class="sec__in">
+    <header class="sec__head">
+      <p class="sec__eyebrow">Un día con NexoAPR</p>
+      <h2 id="un-dia-titulo">De la lectura del medidor al informe DOH, sin volver a digitar nada</h2>
+      <p>Cada paso alimenta al siguiente. Lo que se registra una vez queda disponible para la boleta, la caja, el banco y la contabilidad.</p>
+    </header>
+    <ol class="day">
+      <li><span class="day__n">1</span><h3>Lectura</h3><p>El lector ingresa las lecturas del mes por ruta. El sistema avisa los consumos que no cuadran antes de facturar.</p></li>
+      <li><span class="day__n">2</span><h3>Boleta por WhatsApp o correo</h3><p>La boleta electrónica se calcula con la tarifa del comité, aplica el subsidio y suma la deuda anterior. Le llega al socio por WhatsApp o correo.</p></li>
+      <li><span class="day__n">3</span><h3>Pago en caja</h3><p>La secretaria recibe el pago, entrega el comprobante y al final del día cierra la caja con el detalle de lo recaudado.</p></li>
+      <li><span class="day__n">4</span><h3>Morosidad y convenios</h3><p>Quién debe y cuánto queda a la vista. Los convenios de pago se registran y se siguen cuota a cuota.</p></li>
+      <li><span class="day__n">5</span><h3>Banco</h3><p>Los depósitos y egresos se concilian contra los movimientos del banco, con su comprobante.</p></li>
+      <li><span class="day__n">6</span><h3>Contabilidad e informe DOH</h3><p>La operación se contabiliza por período. De ahí salen los libros, el balance de 8 columnas y el informe DOH.</p></li>
+    </ol>
+    <div class="mods">
+      <p class="mods__title">Lo que administra el comité en NexoAPR</p>
+      <ul>
+        <li>Socios y arranques</li><li>Lecturas</li><li>Facturación electrónica</li><li>Caja</li><li>Cobranza</li><li>Convenios</li><li>Banco</li><li>Compras e inventario</li><li>Contabilidad e informe DOH</li><li>Migración controlada</li>
+      </ul>
+      <a class="mods__link" href="/p/modulos.html">Ver todos los módulos</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--soft" id="capturas" aria-labelledby="capturas-titulo">
+  <div class="sec__in">
+    <header class="sec__head">
+      <p class="sec__eyebrow">Así se ve</p>
+      <h2 id="capturas-titulo">Pantallas simples, pensadas para la secretaria del comité</h2>
+    </header>
+    <!-- CAPTURAS PENDIENTES (datos ficticios) -->
+    <div class="shots">
+      <figure class="shot"><div class="shot__frame"><p>Captura de pantalla próximamente</p></div><figcaption>Ingreso de lecturas por ruta</figcaption></figure>
+      <figure class="shot"><div class="shot__frame"><p>Captura de pantalla próximamente</p></div><figcaption>Caja diaria y cierre</figcaption></figure>
+      <figure class="shot"><div class="shot__frame"><p>Captura de pantalla próximamente</p></div><figcaption>Morosidad y convenios de pago</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="migracion" aria-labelledby="migracion-titulo">
+  <div class="sec__in sec__two">
+    <header class="sec__head">
+      <p class="sec__eyebrow">Cambiarse es fácil</p>
+      <h2 id="migracion-titulo">Migramos todo. Su comité no parte de cero</h2>
+      <p>Traemos todos los datos de su sistema anterior: socios, deudas, convenios y lecturas. Trabajamos desde una copia, así que el sistema original del comité no se toca y sigue funcionando hasta que ustedes decidan el cambio.</p>
+      <a class="sec__btn" href="/p/migracion.html">Cómo es la migración, paso a paso</a>
+    </header>
+    <ul class="migra">
+      <li><strong>Desde una copia</strong><span>Nunca trabajamos sobre el sistema original del comité.</span></li>
+      <li><strong>Socios, deudas, convenios y lecturas</strong><span>Todo el historial que hoy tiene el comité pasa a NexoAPR.</span></li>
+      <li><strong>Prueba antes de confirmar</strong><span>Hacemos una carga de prueba y revisamos las diferencias con ustedes, una a una.</span></li>
+      <li><strong>Cuadrado contra el origen</strong><span>Al terminar verificamos que lo migrado coincide con lo que tenían.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec--navy" id="planes" aria-labelledby="planes-titulo">
+  <div class="sec__in">
+    <header class="sec__head sec__head--light">
+      <p class="sec__eyebrow">Planes y consulta</p>
+      <h2 id="planes-titulo">Elija el plan según el tamaño de su comité</h2>
+      <p>El valor depende del tamaño del comité. Consúltelo sin compromiso y le respondemos a la brevedad.</p>
+    </header>
     <div class="one__panel">
-      <div class="one__tabs" role="tablist" aria-label="Información de NexoAPR">
+      <div class="one__tabs" role="tablist" aria-label="Planes, consulta, links de interés y redes de NexoAPR">
         <button role="tab" id="t-planes" aria-controls="p-planes" aria-selected="true" type="button">Planes</button>
         <button role="tab" id="t-consulta" aria-controls="p-consulta" aria-selected="false" tabindex="-1" type="button">Consulta</button>
         <button role="tab" id="t-links" aria-controls="p-links" aria-selected="false" tabindex="-1" type="button">Links de interés</button>
@@ -46,22 +122,22 @@ nav: home
       <div class="one__pane is-on" role="tabpanel" id="p-planes" aria-labelledby="t-planes">
         <div class="one__plans">
           <article class="plan">
-            <h2>Esencial</h2>
+            <h3>Esencial</h3>
             <p class="plan__for">Comités pequeños</p>
             <ul><li>Socios, lecturas y facturación</li><li>Caja y cobranza</li><li>Boletas por correo</li></ul>
             <button class="plan__btn" type="button" data-plan="Esencial">Consultar valor</button>
           </article>
           <article class="plan plan--star">
             <p class="plan__badge">Más elegido</p>
-            <h2>Profesional</h2>
+            <h3>Profesional</h3>
             <p class="plan__for">Comités medianos</p>
             <ul><li>Todo lo Esencial</li><li>Banco y contabilidad</li><li>Boletas por WhatsApp</li><li>Convenios de pago</li></ul>
             <button class="plan__btn" type="button" data-plan="Profesional">Consultar valor</button>
           </article>
           <article class="plan">
-            <h2>Integral</h2>
+            <h3>Integral</h3>
             <p class="plan__for">Comités grandes</p>
-            <ul><li>Todo lo Profesional</li><li>Informe DOH y balances</li><li>Asesoría Contador APR</li></ul>
+            <ul><li>Todo lo Profesional</li><li>Informe DOH y balances</li><li>Contabilidad mensual con plan de cuentas DOH, F29, remuneraciones y rendición a la asamblea por la consultora <a href="https://www.contadorapr.cl/p/servicios.html">Contador APR</a></li></ul>
             <button class="plan__btn" type="button" data-plan="Integral">Consultar valor</button>
           </article>
         </div>
@@ -101,13 +177,59 @@ nav: home
         <div class="one__redes">
           <div class="one__red">
             <iframe data-src="https://www.youtube-nocookie.com/embed/videoseries?list=UUaDMz7VRTxdrQav7gaQvgYg" title="Videos del canal NexoAPR en YouTube" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
-            <a href="https://www.youtube.com/@NexoAPR?sub_confirmation=1" rel="noopener" target="_blank">YouTube · @NexoAPR<small>Videos de capacitación · Suscríbete</small></a>
+            <a href="https://www.youtube.com/@NexoAPR?sub_confirmation=1" rel="noopener" target="_blank">YouTube: @NexoAPR <small>Videos de capacitación. Suscríbase.</small></a>
           </div>
           <div class="one__red">
             <iframe data-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnexoapr&amp;tabs=timeline&amp;width=500&amp;height=230&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true" title="Publicaciones de NexoAPR en Facebook" loading="lazy" scrolling="no" allow="encrypted-media"></iframe>
-            <a href="https://www.facebook.com/nexoapr" rel="noopener" target="_blank">Facebook · NexoAPR<small>Novedades, demostraciones y comentarios</small></a>
+            <a href="https://www.facebook.com/nexoapr" rel="noopener" target="_blank">Facebook: NexoAPR <small>Novedades, demostraciones y comentarios.</small></a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="preguntas" aria-labelledby="preguntas-titulo">
+  <div class="sec__in sec__narrow">
+    <header class="sec__head">
+      <p class="sec__eyebrow">Preguntas frecuentes</p>
+      <h2 id="preguntas-titulo">Lo que nos preguntan las directivas antes de cambiarse</h2>
+    </header>
+    <div class="faq capr-faq">
+      <details>
+        <summary>¿Y si no sabemos de computación?</summary>
+        <p>NexoAPR está pensado para la secretaria y la directiva, no para expertos. Las pantallas son simples y en la puesta en marcha le enseñamos a usarlo paso a paso. Si después aparece una duda, nos escribe por WhatsApp y le ayudamos.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa con nuestros datos actuales?</summary>
+        <p>Los migramos todos: socios, deudas, convenios y lecturas. Trabajamos desde una copia, sin tocar el sistema original del comité, y antes de confirmar revisamos con ustedes que todo cuadre.</p>
+      </details>
+      <details>
+        <summary>¿Funciona con mala señal?</summary>
+        <p>NexoAPR es un sistema web: se usa desde el navegador y necesita conexión a internet. No hay que instalar nada y funciona en el computador de la oficina, en un notebook o en el celular. Le recomendamos una conexión estable en la oficina del comité.</p>
+      </details>
+      <details>
+        <summary>¿Emite boletas electrónicas?</summary>
+        <p>Sí. NexoAPR emite las boletas electrónicas del comité y las envía al socio por WhatsApp o por correo.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto cuesta?</summary>
+        <p>Depende del tamaño del comité y del plan. Escríbanos o pida una demostración y le enviamos el valor para su caso, sin compromiso.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="cierre-titulo">
+  <div class="sec__in">
+    <div class="close">
+      <div>
+        <h2 id="cierre-titulo">Véalo funcionando con un caso de APR</h2>
+        <p>En una reunión en línea le mostramos lecturas, boletas, caja, cobranza y el informe DOH, y le contamos cómo sería la migración de su comité.</p>
+      </div>
+      <div class="close__acts">
+        <a class="one__btn one__btn--primary" href="/p/demostracion.html">Pida una demostración</a>
+        <a class="one__btn one__btn--wa" href="https://wa.me/56940144218?text=Hola%2C%20quiero%20pedir%20una%20demostraci%C3%B3n%20de%20NexoAPR%20para%20nuestro%20comit%C3%A9." rel="noopener">WhatsApp +56 9 4014 4218</a>
       </div>
     </div>
   </div>
@@ -136,7 +258,7 @@ nav: home
   }
 })();
 (() => {
-  const words = ['Lecturas y rutas', 'Facturación electrónica', 'Cobranza y morosidad', 'Caja diaria', 'Boletas por WhatsApp', 'Banco y conciliación', 'Contabilidad', 'Informe DOH'];
+  const words = ['las lecturas del mes', 'las boletas electrónicas', 'la cobranza y los convenios', 'la caja diaria', 'el banco', 'la contabilidad', 'el informe DOH'];
   const rotor = document.getElementById('rotor');
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let i = 0;
@@ -161,11 +283,11 @@ nav: home
       const n = tabs[(k + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; n.focus(); show(n.id.slice(2));
     });
   });
-  // nexoapr.cl/#consulta, #planes o #links abre esa pestaña (enlaces de campañas y del menú).
-  const fromHash = () => { const h = location.hash.slice(1); if (['planes', 'consulta', 'links', 'redes'].includes(h)) show(h); };
+  // nexoapr.cl/#consulta, #planes, #links o #redes abre esa pestaña y baja hasta los planes (campañas y menú).
+  const panel = document.getElementById('planes');
+  const fromHash = () => { const h = location.hash.slice(1); if (['planes', 'consulta', 'links', 'redes'].includes(h)) { show(h); panel.scrollIntoView(); } };
   fromHash(); window.addEventListener('hashchange', fromHash);
   const form = document.getElementById('consulta');
-  document.querySelectorAll('[data-go]').forEach((b) => b.addEventListener('click', () => { show(b.dataset.go); form.nombre.focus(); }));
   document.querySelectorAll('[data-plan]').forEach((b) => b.addEventListener('click', () => { form.plan.value = b.dataset.plan; show('consulta'); form.nombre.focus(); }));
 
   const status = document.getElementById('consulta-estado');
